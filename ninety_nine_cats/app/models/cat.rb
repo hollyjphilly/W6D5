@@ -19,10 +19,10 @@ class Cat < ApplicationRecord
 
   include ActionView::Helpers::DateHelper
 
-  validates :name, :birth_date, :sex, :description, :color, presence: true
+  validates :name, :birth_date, :sex, :color, presence: true
   validates :color, inclusion: { in: %w(black white ginger striped wild),
     message: "%{value} is not a valid cat color, dummy" }
-  validates :sex, inclusion: { in: %w(M F H A),
+  validates :sex, inclusion: { in: %w(M F Q A),
     message: "%{value} is not a valid sex at this time. We're working on becoming more progressive" }
 
   def age

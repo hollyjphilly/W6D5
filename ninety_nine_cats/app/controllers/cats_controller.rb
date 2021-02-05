@@ -2,7 +2,7 @@ class CatsController < ApplicationController
 
     def index
         @cats = Cat.all
-        render json: cats
+        render :index
     end
 
 end
