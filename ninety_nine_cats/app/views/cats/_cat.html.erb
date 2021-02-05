@@ -1,5 +1,6 @@
 <% if action == :index %>
-  <a href="<%= cat_url(cat) %>">Show cat page</a>
+  <a href="<%= cat_url(cat) %>"><%= cat.name %></a>
 <% else %>
-  
+  <a href="<%= cats_url %>">Back to Index</a>
 <% end %>
+<br>

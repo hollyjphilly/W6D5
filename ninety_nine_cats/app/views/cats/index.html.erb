@@ -1,9 +1,10 @@
-<hi>All the cats</h1>
+<h1>All the cats</h1>
 
 <ul>
 
   <% @cats.each do |cat| %>
   <li><%= render "cat", cat: cat, action: :index%></li>
+  <br>
   <% end %>
 
 </ul>

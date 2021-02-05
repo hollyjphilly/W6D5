@@ -1,0 +1,23 @@
+<%= render 'cat', action: :show %>
+<h1>Kitty</h1> 
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"> <%= @cat.name %> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>age</td>
+            <td><%= @cat.age %></td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td><%= @cat.color %></td>
+        </tr>
+        <tr>
+            <td>sex</td>
+            <td><%= @cat.sex %></td>
+        </tr>
+    </tbody>
+</table>
