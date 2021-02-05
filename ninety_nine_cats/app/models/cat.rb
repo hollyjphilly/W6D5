@@ -14,10 +14,16 @@
 require 'action_view'
 
 class Cat < ApplicationRecord
+ 
+  COLORS = %w(black white ginger striped wild)
 
   include ActionView::Helpers::DateHelper
 
   validates :name, :birth_date, :sex, :description, :color, presence: true
+  validates :color, inclusion: { in: %w(black white ginger striped wild),
+    message: "%{value} is not a valid cat color, dummy" }
+  validates :sex, inclusion: { in: %w(M F H A),
+    message: "%{value} is not a valid sex at this time. We're working on becoming more progressive" }
 
   def age
     p ((Time.zone.now - birth_date.to_time) / 1.year.seconds).floor
