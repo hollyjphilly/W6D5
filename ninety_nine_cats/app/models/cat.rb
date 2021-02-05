@@ -15,7 +15,9 @@ require 'action_view'
 
 class Cat < ApplicationRecord
  
-  COLORS = %w(black white ginger striped wild)
+  @colors = %w(black white ginger striped wild)
+
+  SEXES = %w(M F Q A)
 
   include ActionView::Helpers::DateHelper
 

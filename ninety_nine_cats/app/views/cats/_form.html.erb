@@ -1,0 +1,52 @@
+<form action = "new" method = "POST">
+
+<br><br>
+
+<label>Name
+  <input type = 'text' name = "cat[name]" value = "" >
+</label>
+
+<br><br>
+
+<label>Birthday
+  <input type = 'date' name = "cat[birth_date]" value = "" >
+</label>
+
+<br><br>
+
+<label>Color
+  <select name = "cat[color]">
+
+    <option disabled selected >--Select a color--</option>
+    <% colors.each do |color| %>
+    <option value = "<%= color %>" ><%= color %></option>
+    <% end %>
+    
+  </select>
+</label>
+
+<br><br>
+
+<label>Sexy Sex
+  <select name = "cat[sex]">
+
+    <option disabled selected >--Select a sex--</option>
+    <% sexes.each do |sex| %>
+    <option value = "<%= sex %>" ><%= sex %></option>
+    <% end %>
+
+  </select>
+</label> 
+
+<br><br>
+
+<label>Describe Yo Cat:
+  <br>
+  <textarea name = "cat[description]" value = "" ></textarea>
+</label>
+
+<br><br>
+
+<input type = "submit" value = "Birth!">
+
+</form>

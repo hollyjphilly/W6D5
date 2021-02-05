@@ -596,3 +596,256 @@ Processing by CatsController#show as HTML
 Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/cats" for 127.0.0.1 at 2021-02-05 16:49:52 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aleccaro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:5
+  Rendered cats/_cat.html.erb (0.5ms)
+  Rendered cats/_cat.html.erb (0.2ms)
+  Rendered cats/_cat.html.erb (0.1ms)
+  Rendered cats/_cat.html.erb (0.2ms)
+  Rendered cats/index.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 171ms (Views: 155.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/cats/1" for 127.0.0.1 at 2021-02-05 16:49:58 -0500
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/_cat.html.erb (0.5ms)
+  Rendered cats/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cats/4" for 127.0.0.1 at 2021-02-05 16:50:01 -0500
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/_cat.html.erb (0.5ms)
+  Rendered cats/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2021-02-05 17:18:25 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aleccaro/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (1.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:5
+  Rendered cats/_cat.html.erb (0.6ms)
+  Rendered cats/_cat.html.erb (0.2ms)
+  Rendered cats/_cat.html.erb (0.1ms)
+  Rendered cats/_cat.html.erb (0.1ms)
+  Rendered cats/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 174ms (Views: 158.6ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/cat/new" for 127.0.0.1 at 2021-02-05 17:18:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/cat/new"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:18:53 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting ')'
+...r.append=( render 'form' action: "new" );
+...                         ^~~~~~:
+  app/views/cats/new.html.erb:1:in `'
+  app/controllers/cats_controller.rb:15:in `new'
+
+Started POST "/__better_errors/a2590903503f5214/variables" for 127.0.0.1 at 2021-02-05 17:18:53 -0500
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:19:34 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (7.1ms)
+  Rendered cats/new.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant ActionView::CompiledTemplates::COLORS:
+  app/views/cats/_form.html.erb:21:in `_app_views_cats__form_html_erb___1172780579887320290_70185397187000'
+  app/views/cats/new.html.erb:1:in `_app_views_cats_new_html_erb__2473998337849719886_70185397287360'
+  app/controllers/cats_controller.rb:15:in `new'
+
+Started POST "/__better_errors/0cfa1145f1bc5628/variables" for 127.0.0.1 at 2021-02-05 17:19:34 -0500
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:21:24 -0500
+Processing by CatsController#new as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 5.1ms)
+
+
+
+NameError - uninitialized constant CatsController::COLORS:
+  app/controllers/cats_controller.rb:15:in `new'
+
+Started POST "/__better_errors/e6034a9165c6dc1b/variables" for 127.0.0.1 at 2021-02-05 17:21:24 -0500
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:22:56 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (3.6ms)
+  Rendered cats/new.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 4.7ms)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/cats/_form.html.erb:21:in `_app_views_cats__form_html_erb___1172780579887320290_70185449865240'
+  app/views/cats/new.html.erb:1:in `_app_views_cats_new_html_erb__2473998337849719886_70185449884120'
+  app/controllers/cats_controller.rb:16:in `new'
+
+Started POST "/__better_errors/b83504beba3b974b/variables" for 127.0.0.1 at 2021-02-05 17:22:56 -0500
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:24:29 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (4.0ms)
+  Rendered cats/new.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/cats/_form.html.erb:21:in `_app_views_cats__form_html_erb___1172780579887320290_70185449572480'
+  app/views/cats/new.html.erb:1:in `_app_views_cats_new_html_erb__2473998337849719886_70185449592520'
+  app/controllers/cats_controller.rb:16:in `new'
+
+Started POST "/__better_errors/0dfb9d4940a94029/variables" for 127.0.0.1 at 2021-02-05 17:24:29 -0500
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:25:11 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (3.0ms)
+  Rendered cats/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 5.3ms)
+
+
+
+NoMethodError - undefined method `each' for nil:NilClass:
+  app/views/cats/_form.html.erb:21:in `_app_views_cats__form_html_erb___1172780579887320290_70185438731860'
+  app/views/cats/new.html.erb:1:in `_app_views_cats_new_html_erb__2473998337849719886_70185449523240'
+  app/controllers/cats_controller.rb:16:in `new'
+
+Started POST "/__better_errors/96129fcf48643367/variables" for 127.0.0.1 at 2021-02-05 17:25:11 -0500
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:26:02 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (7.1ms)
+  Rendered cats/new.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 4.5ms)
+
+
+
+NameError - uninitialized constant ActionView::CompiledTemplates::SEXES:
+  app/views/cats/_form.html.erb:34:in `_app_views_cats__form_html_erb___1172780579887320290_70185449030560'
+  app/views/cats/new.html.erb:1:in `_app_views_cats_new_html_erb__2473998337849719886_70185437818040'
+  app/controllers/cats_controller.rb:16:in `new'
+
+Started POST "/__better_errors/acab58777f1708a7/variables" for 127.0.0.1 at 2021-02-05 17:26:02 -0500
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:26:34 -0500
+
+SyntaxError - dynamic constant assignment
+        SEXES = %w(M F Q A)
+              ^:
+  app/controllers/cats_controller.rb:16:in `'
+
+Started POST "/__better_errors/b0da05003b102562/variables" for 127.0.0.1 at 2021-02-05 17:26:34 -0500
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:27:00 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (12.0ms)
+  Rendered cats/new.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 6.3ms)
+
+
+
+NameError - uninitialized constant ActionView::CompiledTemplates::SEXES:
+  app/views/cats/_form.html.erb:34:in `_app_views_cats__form_html_erb___1172780579887320290_70185439060780'
+  app/views/cats/new.html.erb:1:in `_app_views_cats_new_html_erb__2473998337849719886_70185439098140'
+  app/controllers/cats_controller.rb:17:in `new'
+
+Started POST "/__better_errors/562d2d0854089daf/variables" for 127.0.0.1 at 2021-02-05 17:27:01 -0500
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:28:06 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (0.4ms)
+  Rendered cats/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cats/new" for 127.0.0.1 at 2021-02-05 17:28:58 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/cats/new"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cats/new" for 127.0.0.1 at 2021-02-05 17:29:54 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (0.5ms)
+  Rendered cats/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
