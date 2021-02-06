@@ -14,12 +14,10 @@
 require 'action_view'
 
 class Cat < ApplicationRecord
- 
-  @colors = %w(black white ginger striped wild)
-
-  SEXES = %w(M F Q A)
-
   include ActionView::Helpers::DateHelper
+  
+  COLORS = %w(black white ginger striped wild)
+  SEXES = %w(M F Q A)
 
   validates :name, :birth_date, :sex, :color, presence: true
   validates :color, inclusion: { in: %w(black white ginger striped wild),

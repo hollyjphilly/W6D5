@@ -1,15 +1,25 @@
-<form action = "new" method = "POST">
+<% if form_type == :edit %>
+    <% action_url = cat_url(cat) %>
+    <% button_text = "Mutate my Kittaayyy" %>
+<% else %>
+    <% action_url = cats_url %>
+    <% button_text = "Birth my Kittaayyy" %>
+<% end %>
 
-<br><br>
+<form action = "<%= action_url %>" method = "POST">
+
+<% if form_type == :edit %>
+    <input type="hidden" name="_method" value="PATCH">
+<% end %>
 
 <label>Name
-  <input type = 'text' name = "cat[name]" value = "" >
+  <input type = 'text' name = "cat[name]" value = "<%= cat.name %>""> 
 </label>
 
 <br><br>
 
 <label>Birthday
-  <input type = 'date' name = "cat[birth_date]" value = "" >
+  <input type = 'date' name = "cat[birth_date]" value = "<%= cat.birth_date %>" >
 </label>
 
 <br><br>
@@ -18,8 +28,10 @@
   <select name = "cat[color]">
 
     <option disabled selected >--Select a color--</option>
-    <% colors.each do |color| %>
-    <option value = "<%= color %>" ><%= color %></option>
+    <% Cat::COLORS.each do |color| %>
+    <option 
+    <%= cat.color == color ? "selected" : "" %>
+    value = "<%= color %>" ><%= color.capitalize %></option>
     <% end %>
     
   </select>
@@ -31,7 +43,9 @@
   <select name = "cat[sex]">
 
     <option disabled selected >--Select a sex--</option>
-    <% sexes.each do |sex| %>
+    <% Cat::SEXES.each do |sex| %>
+    <option 
+    <%= cat.sex == sex ? "selected" : "" %>
     <option value = "<%= sex %>" ><%= sex %></option>
     <% end %>
 
@@ -42,11 +56,11 @@
 
 <label>Describe Yo Cat:
   <br>
-  <textarea name = "cat[description]" value = "" ></textarea>
+  <textarea name = "cat[description]" value = "<%= cat.description %>" ></textarea>
 </label>
 
 <br><br>
 
-<input type = "submit" value = "Birth!">
+<input type = "submit" value = "<%= button_text %>"">
 
 </form>
