@@ -1,13 +1,23 @@
 class CatsController < ApplicationController
 
     def index
-        @cats = Cat.all
+        @cats = Cat.all.order('id')
         render :index
     end
 
     def show
         @cat = Cat.find(params[:id])
         render :show
+    end
+
+    def create
+        @cat = Cat.new(cat_params)
+        if @cat.save
+            redirect_to cat_url(@cat)
+        else
+            flash.now[:errors] = @cat.errors.full_messages
+            render :new
+        end
     end
 
     def new

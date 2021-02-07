@@ -1,0 +1,16 @@
+<form action" <%= cat_rental_requests_url %> " method"POST">
+
+<label>Cat
+    <select name="request[cat_id]">  
+        <option disabled selected>--select your rental kitty--</option>
+        <% Cat.all.each do |cat| %>
+        <option 
+        <%= @request.cat_id == cat.id ? "selected" : "" %>
+        value="<%= cat.id %>"><%= cat.name.capitalize %></option>
+        <% end %>
+    </select>
+</label>
+
+<label>Start Date
+  <input type = 'date' name = "cat[birth_date]" value = "<%= cat.birth_date %>" >
+</label>

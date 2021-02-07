@@ -26,7 +26,9 @@ class Cat < ApplicationRecord
     message: "%{value} is not a valid sex at this time. We're working on becoming more progressive" }
 
   def age
-    p ((Time.zone.now - birth_date.to_time) / 1.year.seconds).floor
+    ((Time.zone.now - birth_date.to_time) / 1.year.seconds).floor
   end
+
+  has_many :cat_rental_requests, dependent: :destroy
 
 end
