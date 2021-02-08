@@ -1,5 +1,5 @@
 <%= render 'cat', action: :show %>
-<h1>Kitty</h1> 
+<h1>Kitty Cat <%= @cat.name %></h1> 
 <table>
     <thead>
         <tr>
@@ -29,3 +29,28 @@
         </tr>
     </tfoot>
 </table>
+
+<br><br>
+
+<h2><%= @cat.name %>'s Rental Requests</h2>
+
+
+<ul>
+
+  <% CatRentalRequest.where(cat_id: @cat.id).order(:start_date).each do |request| %>
+  <li><%= request.start_date %> - <%= request.end_date %> ___ 
+    <% if request.status == 'APPROVED' %>
+        APPROVED
+    <% else %>
+        <form action="<%= cat_rental_request_approve_url(request) %>" method="post">
+            <input type="submit" value="Approve">
+        </form><form action="<%= cat_rental_request_deny_url(request) %>" method="post">
+            <input type="submit" value="Deny">
+        </form>
+    <% end %>
+  </li>
+    
+  <br>
+  <% end %>
+
+</ul>
